@@ -16,6 +16,7 @@
 
 ## Посилання на комміт
 Комміт, на якому впали тести: https://github.com/Kirillbiliashov/linked-list-lab2/commit/a4cefcabda8caa7490dcc370c0b8f61f403b097b
+
 Лог з error, згенерований CI: https://github.com/Kirillbiliashov/linked-list-lab2/actions/runs/4397981172/jobs/7701486325
 
 # Висновок
