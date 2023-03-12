@@ -132,7 +132,7 @@ public class DoubleLinkedCharacterList implements CharacterList{
       idx++;
       currNode = currNode.next;
     }
-    return 0;
+    return -1;
   }
 
   @Override
@@ -144,7 +144,7 @@ public class DoubleLinkedCharacterList implements CharacterList{
       idx--;
       currNode = currNode.prev;
     }
-    return 0;
+    return -1;
   }
 
   @Override
