@@ -28,6 +28,12 @@ public class DoubleLinkedCharacterList implements CharacterList{
   public void insert(Character element, int idx) {
     Node currNode = getNode(idx);
     Node node = new Node(element);
+    length++;
+    if (currNode == head) {
+      head = node;
+      node.next = currNode;
+      return;
+    }
     Node prevNode = currNode.prev;
     prevNode.next = node;
     currNode.prev = node;
@@ -72,6 +78,8 @@ public class DoubleLinkedCharacterList implements CharacterList{
     while (currNode != null) {
       Node next = currNode.next;
       if (currNode.element.equals(element)) {
+        if (currNode == head) head = currNode.next;
+        if (currNode == tail) tail = currNode.prev;
         Node prev = currNode.prev;
         if (prev != null) prev.next = next;
         if (next != null) next.prev = prev;
@@ -119,24 +127,24 @@ public class DoubleLinkedCharacterList implements CharacterList{
   public int findFirst(Character element) {
     int idx = 0;
     Node currNode = head;
-    while (!currNode.element.equals(element)) {
+    while (currNode != null) {
+      if (currNode.element.equals(element)) return idx;
       idx++;
       currNode = currNode.next;
-      if (currNode == null) break;
     }
-    return currNode == null ? -1 : idx;
+    return -1;
   }
 
   @Override
   public int findLast(Character element) {
-    int idx = this.length() - 1;
+    int idx = this.length - 1;
     Node currNode = tail;
-    while (!currNode.element.equals(element)) {
+    while (currNode != null) {
+      if (currNode.element.equals(element)) return idx;
       idx--;
       currNode = currNode.prev;
-      if (currNode == null) break;
     }
-    return currNode == null ? -1 : idx;
+    return -1;
   }
 
   @Override
