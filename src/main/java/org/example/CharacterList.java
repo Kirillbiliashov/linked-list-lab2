@@ -1,6 +1,6 @@
 package org.example;
 
-public interface CharacterList<T> {
+public interface CharacterList {
 
   int length();
 
@@ -14,7 +14,7 @@ public interface CharacterList<T> {
 
   Character get(int idx);
 
-  T clone();
+  CharacterList clone();
 
   void reverse();
 
@@ -24,6 +24,6 @@ public interface CharacterList<T> {
 
   void clear();
 
-  void extend(T elements);
+  void extend(CharacterList elements);
 
 }
